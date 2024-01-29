@@ -27,8 +27,8 @@
                         <ul class="list-group-flush py-3 ">
                             <li class="d-flex list-group-item border-bottom py-2 me-5"  v-if="tasks.length !== 0" v-for="(element, index) in tasks">
                                 <input class="form-check-input me-2" type="checkbox" value="" :id="index">
-                                <label class="form-check-label stretched-link flex-grow-1" :for="index">{{element.text}}</label>
-                                <i class="fa-solid fa-xmark text-danger align-self-center"></i>
+                                <label class="form-check-label flex-grow-1" :for="index">{{element.text}}</label>
+                                <i class="fa-solid fa-xmark text-danger align-self-center" @click="removeTask"></i>
                             </li>
                             <div v-else class="pt-4">
                                 <h4 class="text-center ">All done! No tasks to do 😍</h4>

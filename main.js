@@ -10,10 +10,13 @@ createApp({
     methods: {
         addTask() {
             if (this.newTask !== '') {
-                this.tasks.push({text: this.newTask, done: false})
+                this.tasks.unshift({text: this.newTask, done: false})
             }
             this.newTask = ''
         },
+        removeTask(index) {
+            this.tasks.splice(index, 1)
+        }
     },
     
 }).mount('#app')
